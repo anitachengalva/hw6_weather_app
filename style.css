@@ -8,12 +8,13 @@ header {
     font-size: x-large;
     background-image: linear-gradient(to right, #BFD8E8 , #22638F);
     margin: 20px;
-    padding: 10px;
+    padding: 12px;
 }
 
     /* city links on sidenav */
 #firstlink {
     margin-top: 25px;
+    text-align: center;
 }
 
 a {
@@ -23,7 +24,7 @@ a {
     display: block;
     background-color: #22638F;
     font-size: 80%;
-    width: 40%;
+    width: 60%;
     margin: 10px;
     padding: 4px;
     border-radius: 10px;
@@ -41,18 +42,25 @@ hr.rounded {
 
 
 /* flexbox */
+  /* includes sidebar & weather dashboard */
 .flex {
     display: flex;
 }
+
+    /* sidebar + searchbar */
 .flex1 {
     flex: 1;
     align-items: flex-start;
 }
 
+    /* whole weather container */
 .weather-container {
+    display: flex;
     flex: 1;
     flex-grow: 2;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+
     text-align: center;
     font-size: x-small;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -63,6 +71,34 @@ hr.rounded {
     border-radius: 25px;
 }
 
+    /* top half of weather container,
+        includes 2 additional flex boxes within:
+        left- city name & icon, right- temp, wind, humidity, UV */
+.flextop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+    /* left side of flextop container,
+        includes city name & icon */
+.cityicon {
+    flex: 1;
+}
+
+    /* right side of flextop container,
+        includes temp, wind, humidity, and UV data */
+.cityweather {
+    flex: 1;
+}
+
+    /* bottom half of weather container,
+        includes 5 day forecast on 5 cards */
+.flexbott {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .weather {
     font-size: 20px;
     margin: 0;
@@ -71,4 +107,11 @@ hr.rounded {
 .temp {
     font-size: 20px;
     margin: 0;
+}
+
+footer {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: gray;
+    text-align: center;
+    padding: 20px;
 }

@@ -17,4 +17,7 @@ function weather(data) {
     // prints weather data
     $(".weather").append(weather);
     $(".temp").append(temp);
+    $(".wind").append(wind);
+    $(".humidity").append(humidity);
+    $(".uv").append(uv);
 }
