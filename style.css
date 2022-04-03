@@ -42,4 +42,16 @@ hr.rounded {
 .weather-container {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
+    background-color: #BFD8E8;
+}
+
+.weather {
+    font-size: 20px;
+    margin: 0;
+}
+
+.temp {
+    font-size: 20px;
+    margin: 0;
 }
