@@ -5,7 +5,7 @@ header {
     font-weight: bolder;
     color: antiquewhite;
     text-emphasis: bold;
-    font-size: larger;
+    font-size: x-large;
     background-image: linear-gradient(to right, #BFD8E8 , #22638F);
     margin: 20px;
     padding: 10px;
@@ -23,7 +23,7 @@ a {
     display: block;
     background-color: #22638F;
     font-size: 80%;
-    width: 10%;
+    width: 40%;
     margin: 10px;
     padding: 4px;
     border-radius: 10px;
@@ -39,11 +39,28 @@ hr.rounded {
     margin-bottom: 20px;
   }
 
-.weather-container {
+
+/* flexbox */
+.flex {
     display: flex;
+}
+.flex1 {
+    flex: 1;
+    align-items: flex-start;
+}
+
+.weather-container {
+    flex: 1;
+    flex-grow: 2;
     flex-wrap: wrap;
     text-align: center;
-    background-color: #BFD8E8;
+    font-size: x-small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: antiquewhite;
+    background-image: linear-gradient( #22638F, #BFD8E8);
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 25px;
 }
 
 .weather {

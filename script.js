@@ -13,6 +13,8 @@ function weather(data) {
 
     // icon displays current weather conditions 
     $(".icon").attr('src', icon);
+
+    // prints weather data
     $(".weather").append(weather);
     $(".temp").append(temp);
 }
