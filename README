@@ -1,3 +1,6 @@
 Hello! This assignment is homework 6, the Weather Dashboard.
 I utilized HTML, CSS, & Javascript alongside a serverside API to create this webpage.
+The API I used here is OpenWeatherMap
 It features a location searchbar as well as a 5-day forecast, temperature, wind, and humidity for the user's city input.
+
+OpenWeatherMap url http://api.openweathermap.org/data/2.5/weather?q=Seattle&units=imperial&APPID=8c8e55781e1b60ae6ad3fafe04b05cc8
