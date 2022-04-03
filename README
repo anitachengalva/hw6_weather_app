@@ -1,0 +1,3 @@
+Hello! This assignment is homework 6, the Weather Dashboard.
+I utilized HTML, CSS, & Javascript alongside a serverside API to create this webpage.
+It features a location searchbar as well as a 5-day forecast, temperature, wind, and humidity for the user's city input.
