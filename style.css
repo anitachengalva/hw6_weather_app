@@ -31,6 +31,11 @@ a {
     text-decoration: none;
   }
 
+  /* searchbar class */
+.searchbar {
+    margin-left: 5px;
+}
+
   /* rounded divider */
 hr.rounded {
     display: block;
@@ -38,6 +43,7 @@ hr.rounded {
     width: 210px;
     border-top: 3px solid #bbb;
     margin-bottom: 20px;
+    margin-left: 5px;
   }
 
 
