@@ -3,19 +3,34 @@
 
 ## Description
 
+This project is a weather application that runs in browser and features dynamically updated HTML and CSS. Weather information displayed is dependant on user input for location, and pulls weather data from he third-party serverside API OpenWeatherMap.  
+
+It features a location searchbar as well as a 5-day forecast, temperature, wind, and humidity for the user's city input.  
+
+
 ## User Story
 
-## Deployed Link
+AS A traveler  
+I WANT to see the weather outlook for multiple cities  
+SO THAT I can plan a trip accordingly  
+
+
+## Links
+
+[OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
+
+[Deployed Link to Application](https://anitachengalva.github.io/weather-dashboard/)
+
 
 ## Screenshots
 
 ## Contact Me
 
+Thank you for checking out this README! If you have any questions, please email me at webdev.anita@gmail.com  
+
+My Github is https://github.com/anitachengalva
+
+
 ## License
 
-Hello! This assignment is homework 6, the Weather Dashboard.
-I utilized HTML, CSS, & Javascript alongside a serverside API to create this webpage.
-The API I used here is OpenWeatherMap
-It features a location searchbar as well as a 5-day forecast, temperature, wind, and humidity for the user's city input.
-
-OpenWeatherMap url http://api.openweathermap.org/data/2.5/weather?q=Seattle&units=imperial&APPID=8c8e55781e1b60ae6ad3fafe04b05cc8
+This project is licenced under the MIT License.
