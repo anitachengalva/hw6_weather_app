@@ -1,6 +1,17 @@
+// unique API key and user input city as variables
+var APIkey = "8c8e55781e1b60ae6ad3fafe04b05cc8";
+var city;
+
+// insert variables into API query URL
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+
+// store user input city variable
+
 
 // fetch API
-fetch('http://api.openweathermap.org/data/2.5/weather?q=Seattle&units=imperial&APPID=8c8e55781e1b60ae6ad3fafe04b05cc8')
+let response = fetch(queryURL)
+
+fetch(queryURL)
   .then(response => response.json())
   .then(data => console.log(data));
   
