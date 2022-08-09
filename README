@@ -1,36 +1,17 @@
 
-# WEATHER DASHBOARD
+# Weather Dashboard
 
 ## Description
 
-This project is a weather application that runs in browser and features dynamically updated HTML and CSS. Weather information displayed is dependant on user input for location, and pulls weather data from he third-party serverside API OpenWeatherMap.  
+This project is a weather application that runs in browser and features dynamically updated HTML and CSS. Weather information displayed is dependant on user input for location, and pulls weather data from he third-party serverside API [OpenWeatherMap](https://openweathermap.org/api/one-call-api). Any persistent data is stored in `localStorage`.  
 
-It features a location searchbar as well as a 5-day forecast, temperature, wind, and humidity for the user's city input.  
-
-
-## User Story
-
-AS A traveler  
-I WANT to see the weather outlook for multiple cities  
-SO THAT I can plan a trip accordingly  
+The application features a location searchbar as well as a 5-day forecast, temperature, wind, and humidity for the user's city input.  
 
 
-## Links
+## Deployed Link
 
-[OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
-
-[Deployed Link to Application](https://anitachengalva.github.io/weather-dashboard/)
-
-
-
-# Title
-
-## Description
-
-## Deployed Link(s)
-
-This application is deployed through [Heroku](https://www.heroku.com/what).
-> link
+This application is deployed through [Github Pages](https://pages.github.com/).
+> https://anitachengalva.github.io/weather-dashboard/
 
 
 ## Table of Contents
@@ -45,40 +26,30 @@ This application is deployed through [Heroku](https://www.heroku.com/what).
 
 ## User Story
 
-```md
-AS A ____________
-I WANT _______________
-SO THAT _____________
+```
+AS A traveler
+I WANT to see the weather outlook for multiple cities
+SO THAT I can plan a trip accordingly
 ```
 
 
 ## Installation and Usage
 
-In order to run this application, you will want to `git clone` this repository so that the code is on your local machine. Run `npm i` while in the root directory in order to install all necessary [Node.js](https://nodejs.org/en/) dependencies. Then run `npm start` to launch the server.
+In order to run this application, you will want to `git clone` this repository so that the code is on your local machine. With the file `index.html` open, press `ALT+B` to launch the application in browser.
 
-This application is hosted at Port 3001, so typing: `http://localhost:3001/` into the address bar of your browser (while the server is running) should display the user interface.
+Alternatively, you can simply visit my [Deployed Link](https://anitachengalva.github.io/weather-dashboard/).
 
-Alternatively, you can simply visit my [Deployed Link]().
 
 ## Technologies Utilized
 
+> [HTML](https://html.com/)
+
+> [CSS](https://web.dev/learn/css/)
+
 > [Javascript](https://www.javascript.com/)
 
-> [MongoDB](https://www.mongodb.com/)
+> [OpenWeather One Call API](https://openweathermap.org/api/one-call-api)
 
-> [Express.js](https://expressjs.com/)
-
-> [React](https://reactjs.org/)
-
-> [Node.js](https://nodejs.org/en/)
-> - [Mongoose npm](https://www.npmjs.com/package/mongoose)
-> - [Express.js npm](https://www.npmjs.com/package/express)
-
-> [Google Books API](https://developers.google.com/books)
-
-> [RESTful API](https://aws.amazon.com/what-is/restful-api/)
-
-> [GraphQL API](https://graphql.org/learn/)
 
 ## Screenshots and Walkthrough
 
