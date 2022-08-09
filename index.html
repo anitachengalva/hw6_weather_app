@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="./assets/script.js"></script>
+    <script src="./assets/script.js" defer></script>
 </head>
 
 <body>
@@ -15,9 +15,9 @@
 
     <div class = "flex">
         <div class="flex1">
-            <form class="searchbar" action="searchcity">
-                <input type="text" placeholder="Search a City">
-                <button type="submit"><i class="fa fa-search"></i>
+            <form class="searchbar">
+                <input type="text" id="searchBar" placeholder="Search a City">
+                <button id="searchButton" type="submit"><i class="fa fa-search"></i>
                 </button>
             </form>
 
@@ -56,12 +56,12 @@
                     <!-- search result for city name -->
                     <img class="icon">
                 </div>
-                <div class="cityweather">
-                    <p class="weather"></p>
-                    <p class="temp"></p>
-                    <p class="wind"></p>
-                    <p class="humidity"></p>
-                    <p class="uv"></p>
+                <div id="cityweather">
+                    <p id="weather"></p>
+                    <p id="temp"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                    <p id="uv"></p>
                 </div>
             </div>
             <h1>5-Day Forecast</h1>
