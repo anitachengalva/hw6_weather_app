@@ -13,11 +13,9 @@ var wind = document.getElementById("wind");
 var humidity = document.getElementById("humidity");
 var uv = document.getElementById("uv");
 
-// fetch api by passing key through url
-fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey)
-
 // hit search button
-document.getElementById("searchButton").addEventListener("click",search)
+button.addEventListener("click", search)
+
 // grab user input for city name
 
 for(i=previousSearches.length-1;i>previousSearches.length-5;i--){
