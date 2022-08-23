@@ -32,16 +32,16 @@ function search (event){
   
     localStorage.setItem("previousSearches",previousSearches)
   
-    var queryURL_location = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
   
-    fetch(queryURL_location)
+    fetch(queryURL)
       .then(response => response.json())
       .then(data => {
         console.log(data)
 
         // get location to pass into onecall api
-        var lat = data['coord']['lat'];
-        var lon = date['coord']['lon'];
+        // var lat = data['coord']['lat'];
+        // var lon = date['coord']['lon'];
         
         // current weather data
         var city_name = data['name'];
