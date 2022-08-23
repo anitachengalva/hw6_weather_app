@@ -2,7 +2,9 @@
 var APIkey = "8c8e55781e1b60ae6ad3fafe04b05cc8";
 var previousSearches = localStorage.getItem("previousSearches") || []
 
-// insert variables into API query URL
+// defining variables
+var button = document.getElementById("searchButton");
+var inputValue = document.getElementById("searchBar");
 
 
 // hit search button
