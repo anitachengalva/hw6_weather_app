@@ -37,8 +37,13 @@ function search (event){
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        //second fetch using the coordinates from data.coord.lat
-        //this is where you'll manipulate the DOM
+        
+        var city_name = data['name'];
+        var temp_index = data['main']['temp'];
+        var wind_index = data[''];
+        var humidity_index = data[''];
+        var uv_index = data[''];
+
       });
 }
 
