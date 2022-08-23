@@ -7,7 +7,7 @@ var button = document.getElementById("searchButton");
 let city = document.getElementById("searchBar").value;
 
 var date = document.getElementById("currentDate");
-var name = document.getElementById("cityName");
+var cityName = document.getElementById("cityName");
 var weather = document.getElementById("weather");
 var temp = document.getElementById("temp");
 var wind = document.getElementById("wind");
@@ -41,10 +41,18 @@ function search (event){
         
         // current weather data
         var city_name = data['name'];
+        var city_weather = data['weather']['0']['description'];
         var temp_index = data['main']['temp'];
         var wind_index = data['wind']['speed'];
         var humidity_index = data['main']['humidity'];
         var uv_index = data['clouds']['all'];
+
+        cityName.innerHTML = city_name;
+        weather.innerHTML = city_weather;
+        temp.innerHTML = temp_index;
+        wind.innerHTML = wind_index;
+        humidity.innerHTML = humidity_index;
+        uv.innerHTML = uv_index;
 
         // future weather forecast
         
