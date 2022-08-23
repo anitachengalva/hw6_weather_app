@@ -28,7 +28,7 @@ function search (event){
     event.preventDefault();
     let city = document.getElementById("searchBar").value;
     console.log(event.target)
-    previousSearches.push(city)
+    // previousSearches.push(city)
   
     localStorage.setItem("previousSearches",previousSearches)
   
@@ -39,12 +39,14 @@ function search (event){
       .then(data => {
         console.log(data)
         
+        // current weather data
         var city_name = data['name'];
         var temp_index = data['main']['temp'];
-        var wind_index = data[''];
-        var humidity_index = data[''];
-        var uv_index = data[''];
+        var wind_index = data['wind']['speed'];
+        var humidity_index = data['main']['humidity'];
+        var uv_index = data['clouds']['all'];
 
+        // future weather forecast
         
 
       });
