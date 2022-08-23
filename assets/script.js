@@ -6,6 +6,7 @@ var previousSearches = localStorage.getItem("previousSearches") || []
 var button = document.getElementById("searchButton");
 let city = document.getElementById("searchBar").value;
 
+var date = document.getElementById("currentDate");
 var name = document.getElementById("cityName");
 var weather = document.getElementById("weather");
 var temp = document.getElementById("temp");
@@ -43,6 +44,8 @@ function search (event){
         var wind_index = data[''];
         var humidity_index = data[''];
         var uv_index = data[''];
+
+        
 
       });
 }
