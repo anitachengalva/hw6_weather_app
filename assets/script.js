@@ -5,7 +5,12 @@ var previousSearches = localStorage.getItem("previousSearches") || []
 // defining variables
 var button = document.getElementById("searchButton");
 var inputValue = document.getElementById("searchBar");
-
+var name = document.getElementById("cityName");
+var weather = document.getElementById("weather");
+var temp = document.getElementById("temp");
+var wind = document.getElementById("wind");
+var humidity = document.getElementById("humidity");
+var uv = document.getElementById("uv");
 
 // hit search button
 document.getElementById("searchButton").addEventListener("click",search)
