@@ -29,7 +29,6 @@ for(i=previousSearches.length-1;i>previousSearches.length-5;i--){
 };
 
 
-
 // grab user input for city name
 function search (event){
     event.preventDefault();
@@ -74,14 +73,28 @@ function search (event){
         return results;
         }).then(function(results){
 
-          // for(i=0;i<5;i++){
-            document.querySelector(".icon").src="http://openweathermap.org/img/w/" + results.current.weather[0].icon + ".png"
-            //target the div where the 5 day forecast is happening
-            //and inject the same card format one after the other with different days
-          //}
-        })
-        
+          // gets icon for current weather
+          document.querySelector(".icon").src="http://openweathermap.org/img/w/" + results.current.weather[0].icon + ".png"
 
+          // date stamp
+          // uv index
+
+          // five day forecast
+              // DAY 1
+              var icon_1 = data['daily']['0']['weather']['0']['icon'];
+              var date_1 = data['daily']['0']['dt'];
+              var high_1 = data['daily']['0']['temp']['max'];
+              var low_1 = data['daily']['0']['temp']['min'];
+              var wind_1 = data['daily']['0']['wind_speed'];
+              var humidity_1 = data['daily']['0']['humidity'];
+
+              document.getElementById("day1-icon").innerHTML = icon_1;
+              document.getElementById("day1-date").innerHTML = date_1;
+              document.getElementById("day1-temphigh").innerHTML = high_1;
+              document.getElementById("day1-templow").innerHTML = low_1;
+              document.getElementById("day1-wind").innerHTML = wind_1;
+              document.getElementById("day1-humidity").innerHTML = humidity_1;
+        })
       });
 }
 

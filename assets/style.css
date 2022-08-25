@@ -92,10 +92,18 @@ hr.rounded {
     flex: 1;
 }
 
+.cityheader {
+    padding: 20px;
+    border-radius: 5%;
+    margin: 20px;
+}
+
     /* right side of flextop container,
         includes temp, wind, humidity, and UV data */
-.cityweather {
-    flex: 1;
+#cityweather {
+    padding: 20px;
+    border-radius: 5%;
+    margin: 20px;
 }
 
     /* bottom half of weather container,
