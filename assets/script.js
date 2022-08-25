@@ -17,16 +17,16 @@ var uv = document.getElementById("uv");
 // hit search button
 button.addEventListener("click", search)
 
-// grab user input for city name
 
 for(i=previousSearches.length-1;i>previousSearches.length-5;i--){
   //target the div where the buttons are stored. and then dynamically add html for buttons
-  // document.getElementById("buttonZone").innerHTML+=`<button class"="search">${previousSearches[i]}</button>`
+  document.getElementsByClassName("cities").innerHTML+=`<button class"="search">${previousSearches[i]}</button>`
 }
 
 //example:
 //button.addEventlistener("click",search)
 
+// grab user input for city name
 function search (event){
     event.preventDefault();
     let city = document.getElementById("searchBar").value || event.target.innerText;
