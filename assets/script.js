@@ -18,15 +18,15 @@ var uv = document.getElementById("uv");
 button.addEventListener("click", search)
 
 
-for(i=previousSearches.length-1;i>previousSearches.length-5;i--){
-  //target the div where the buttons are stored. and then dynamically add html for buttons
-  document.getElementsByClassName("cities").innerHTML+=`<button class="cities-searched">${previousSearches[i]}</button>`;
+// for(i=previousSearches.length-1;i>previousSearches.length-5;i--){
+//   //target the div where the buttons are stored. and then dynamically add html for buttons
+//   document.getElementsByClassName("cities").innerHTML+=`<button class="cities-searched">${previousSearches[i]}</button>`;
   
-  button.addEventlistener("click",search)
-    if (button.hasAttribute("class", "cities-searched")) {
-      search();
-    }
-};
+//   button.addEventlistener("click",search)
+//     if (button.hasAttribute("class", "cities-searched")) {
+//       search();
+//     }
+// };
 
 
 // grab user input for city name
@@ -59,7 +59,7 @@ function search (event){
 
         cityName.innerHTML = city_name;
         weather.innerHTML = city_weather;
-        temp.innerHTML = temp_index;
+        temp.innerHTML = Number(1.8*(temp_index-273)+32).toFixed(1) + "°F";
         wind.innerHTML = wind_index;
         humidity.innerHTML = humidity_index;
         uv.innerHTML = uv_index;
@@ -80,23 +80,42 @@ function search (event){
           // uv index
 
           // five day forecast
-              // DAY 1
-              var icon_1 = data['daily']['0']['weather']['0']['icon'];
-              var date_1 = data['daily']['0']['dt'];
-              var high_1 = data['daily']['0']['temp']['max'];
-              var low_1 = data['daily']['0']['temp']['min'];
-              var wind_1 = data['daily']['0']['wind_speed'];
-              var humidity_1 = data['daily']['0']['humidity'];
+            for (let i = 0; i < 5; i++) {
+              let index = i + 1;
+              // var dayJS = dayjs();
+              var today = today.add(index, "d").format("MM/DD/YY");
+          
+              var icon_1 = data['daily'][index]['weather']['0']['icon'];
+              var date_1 = data['daily'][index]['dt'];
+              var high_1 = data['daily'][index]['temp']['max'];
+              var low_1 = data['daily'][index]['temp']['min'];
+              var wind_1 = data['daily'][index]['wind_speed'];
+              var humidity_1 = data['daily'][index]['humidity'];
+          
+              document.getElementById(`day${index}-icon`).src = `https://openweathermap.org/img/w/${icon_1}.png`;
+              
+              document.getElementById(`day${index}-date`).innerHTML = date_1;
+              document.getElementById(`day${index}-temphigh`).innerHTML = Math.floor(high_1);
+              document.getElementById(`day${index}-templow`).innerHTML = Math.floor(low_1);
+            
+              document.getElementById(`day${index}-wind`).innerHTML = Math.floor(wind_1);
+              document.getElementById(`day${index}-humidity`).innerHTML = humidity_1;
+            }
 
-              document.getElementById("day1-icon").innerHTML = icon_1;
-              document.getElementById("day1-date").innerHTML = date_1;
-              document.getElementById("day1-temphigh").innerHTML = high_1;
-              document.getElementById("day1-templow").innerHTML = low_1;
-              document.getElementById("day1-wind").innerHTML = wind_1;
-              document.getElementById("day1-humidity").innerHTML = humidity_1;
+              // document.getElementById("day1-icon").innerHTML = icon_1;
+              // document.getElementById("day1-date").innerHTML = date_1;
+              // document.getElementById("day1-temphigh").innerHTML = "High Temp: " + high_1 + "°K";
+              // document.getElementById("day1-templow").innerHTML = "Low Temp: " + low_1 + "°K";
+              // document.getElementById("day1-wind").innerHTML = "Wind Speed: " + wind_1;
+              // document.getElementById("day1-humidity").innerHTML = "Humidity: " + humidity_1;
         })
       });
 }
+
+// Default displayed weather is Seattle
+function init(){
+  search("Seattle");
+};
 
 
 // incorperate date into display
