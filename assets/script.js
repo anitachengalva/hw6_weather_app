@@ -20,11 +20,15 @@ button.addEventListener("click", search)
 
 for(i=previousSearches.length-1;i>previousSearches.length-5;i--){
   //target the div where the buttons are stored. and then dynamically add html for buttons
-  document.getElementsByClassName("cities").innerHTML+=`<button class"="search">${previousSearches[i]}</button>`
-}
+  document.getElementsByClassName("cities").innerHTML+=`<button class="cities-searched">${previousSearches[i]}</button>`;
+  
+  button.addEventlistener("click",search)
+    if (button.hasAttribute("class", "cities-searched")) {
+      search();
+    }
+};
 
-//example:
-//button.addEventlistener("click",search)
+
 
 // grab user input for city name
 function search (event){
