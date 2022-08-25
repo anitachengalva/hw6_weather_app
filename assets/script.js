@@ -1,6 +1,6 @@
 // unique API key and user input city as variables
 var APIkey = "8c8e55781e1b60ae6ad3fafe04b05cc8";
-var previousSearches = localStorage.getItem("previousSearches") || []
+var previousSearches = JSON.parse(localStorage.getItem("previousSearches")) || []
 
 // defining variables
 var button = document.getElementById("searchButton");
@@ -20,17 +20,20 @@ button.addEventListener("click", search)
 // grab user input for city name
 
 for(i=previousSearches.length-1;i>previousSearches.length-5;i--){
-  //make a for loop for your buttons here
+  //target the div where the buttons are stored. and then dynamically add html for buttons
+  // document.getElementById("buttonZone").innerHTML+=`<button class"="search">${previousSearches[i]}</button>`
 }
 
+//example:
+//button.addEventlistener("click",search)
 
 function search (event){
     event.preventDefault();
-    let city = document.getElementById("searchBar").value;
+    let city = document.getElementById("searchBar").value || event.target.innerText;
     console.log(event.target)
-    // previousSearches.push(city)
+    previousSearches.push(city)
   
-    localStorage.setItem("previousSearches",previousSearches)
+    localStorage.setItem("previousSearches",JSON.stringify(previousSearches));
   
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
   
@@ -40,8 +43,8 @@ function search (event){
         console.log(data)
 
         // get location to pass into onecall api
-        // var lat = data['coord']['lat'];
-        // var lon = date['coord']['lon'];
+        var lat = data['coord']['lat'];
+        var lon = data['coord']['lon'];
         
         // current weather data
         var city_name = data['name'];
@@ -59,7 +62,28 @@ function search (event){
         uv.innerHTML = uv_index;
 
         // future weather forecast
+        var queryURL2 = "https://api.openweathermap.org/data/3.0/onecall?lat=" + lat + "&lon=" + lon + "&exclude=currently,minutely,hourly,alerts&appid=" + APIkey;
+
+        fetch(queryURL2).then(async function(response){
+        let results = await response.json()
+        console.log(results)
+        return results;
+        }).then(function(results){
+
+          // for(i=0;i<5;i++){
+            document.querySelector(".icon").src="http://openweathermap.org/img/w/" + results.current.weather[0].icon + ".png"
+            //target the div where the 5 day forecast is happening
+            //and inject the same card format one after the other with different days
+          //}
+        })
         
 
       });
 }
+
+
+// incorperate date into display
+// incorperate icon
+// five day forecast
+// previous search history
+// temp k to f
