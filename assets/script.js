@@ -83,14 +83,15 @@ function search (event){
             for (let i = 0; i < 5; i++) {
               let index = i + 1;
               // var dayJS = dayjs();
-              var today = today.add(index, "d").format("MM/DD/YY");
+              // var today = today.add(index, "d").format("MM/DD/YY");
           
-              var icon_1 = data['daily'][index]['weather']['0']['icon'];
-              var date_1 = data['daily'][index]['dt'];
-              var high_1 = data['daily'][index]['temp']['max'];
-              var low_1 = data['daily'][index]['temp']['min'];
-              var wind_1 = data['daily'][index]['wind_speed'];
-              var humidity_1 = data['daily'][index]['humidity'];
+              var icon_1 = results.daily[index].weather[0].icon;
+              console.log(icon_1)
+              var date_1 = results['daily'][index]['dt'];
+              var high_1 = results['daily'][index]['temp']['max'];
+              var low_1 = results['daily'][index]['temp']['min'];
+              var wind_1 = results['daily'][index]['wind_speed'];
+              var humidity_1 = results['daily'][index]['humidity'];
           
               document.getElementById(`day${index}-icon`).src = `https://openweathermap.org/img/w/${icon_1}.png`;
               
@@ -102,8 +103,8 @@ function search (event){
               document.getElementById(`day${index}-humidity`).innerHTML = humidity_1;
             }
 
-              // document.getElementById("day1-icon").innerHTML = icon_1;
-              // document.getElementById("day1-date").innerHTML = date_1;
+              document.getElementById("day1-icon").src = icon_1;
+              document.getElementById("day1-date").innerHTML = date_1;
               // document.getElementById("day1-temphigh").innerHTML = "High Temp: " + high_1 + "°K";
               // document.getElementById("day1-templow").innerHTML = "Low Temp: " + low_1 + "°K";
               // document.getElementById("day1-wind").innerHTML = "Wind Speed: " + wind_1;
